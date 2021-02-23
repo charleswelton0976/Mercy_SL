@@ -2,4 +2,10 @@ This is a new test file for Ansible class.
 Updates from Ansible Server
 Updates from Ansible Server 2
 Updates from Ansible Server 3
+<<<<<<< HEAD
 Updates from Ansible Server 4
+=======
+Windows Git CMD Test
+This is a VSC test
+Another test
+>>>>>>> 9035f4d9c112c9d042e15e52bd92aebd33a20937

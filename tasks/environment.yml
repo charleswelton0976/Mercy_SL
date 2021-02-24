@@ -6,5 +6,5 @@
   - name: Start the {{ service }} service
     service:
       name: "{{ service }}"
-      state: "{{ svc_state }}""
+      state: "{{ svc_state }}"
 ...

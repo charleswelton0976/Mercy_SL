@@ -1,5 +1,5 @@
 ---
-  - hosts: labservers
+    hosts: labservers
     become: yes
 
     vars:

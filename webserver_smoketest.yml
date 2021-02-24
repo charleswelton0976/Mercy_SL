@@ -1,5 +1,5 @@
 ---
-    - Name: Playbook the queries web service
+    - name: Playbook the queries web service
       hosts: localhost
       tasks:
         - name: Ensure the webserver is reachable

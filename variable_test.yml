@@ -15,6 +15,7 @@
             - "{{ firewall_pkg }}"
             - "{{ python_pkg }}"
           state: latest
+          ignore_errors: True
       - name: Start and enable the {{ firewall_service }} service
         service:
           name: "{{ firewall_service }}"

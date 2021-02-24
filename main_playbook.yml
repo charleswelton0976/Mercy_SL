@@ -1,6 +1,6 @@
 ---
   - name: Working on inclusion of external playbooks
-    hosts: labservers
+    hosts: all
     become: yes
 
     vars:

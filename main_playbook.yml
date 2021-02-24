@@ -1,0 +1,39 @@
+---
+  hosts: labservers
+  become: yes
+
+  vars:
+    rule: http
+    package: httpd
+    service: httpd
+    svc_state: started
+
+  - name: Import variables from file (variables.yml)
+    include_vars: vars/variables.yml
+
+  - name: Import tasks from file (environment.yml)
+    import_tasks: tasks/environment.yml
+
+  - name: Install {{ firewall_pkg }} package
+    yum:
+      name: "{{ firewall_pkg }}"
+      state: latest
+  
+  - name: Start {{ firewall_pkg }} service
+    service:
+      name: "{{ firewall_pkg }}"
+      state: started
+      enabled: true
+
+  - name: Open the port for {{ rule }}
+    firewalld:
+      service: "{{ rule }}"
+      immediate: true
+      permanent: true
+      state: enabled
+
+  - name: Create index.html
+    copy:
+      content: "{{ ansible_fqdn }} has been customized using Ansible on the {{ ansible_date_time.date }}\n"
+      dest: /var/www/html/index.html
+...

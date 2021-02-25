@@ -3,7 +3,7 @@
     hosts: labservers
     become: true
     remote_user: devops
-    var_files:
+    vars_files:
       - secret.yml
     tasks:
       - name: Creating users from secret.yml

@@ -3,6 +3,7 @@
 
 db:
   user: root
+  myhost: localhost
   database: userdb
   password: redhat
 httpd_pkg:

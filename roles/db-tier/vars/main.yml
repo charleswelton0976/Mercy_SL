@@ -11,6 +11,7 @@ db_srv: mariadb
 
 db:
   user: root
+  myhost: localhost
   database: userdb
   password: redhat
   backupfile: userdb.backup

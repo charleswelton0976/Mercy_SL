@@ -47,19 +47,19 @@
     append_privs: yes
     password: "{{ db['password'] }}"
     login_password: "{{ db['password'] }}"
-     host: "{{ item }}"
+    host: "{{ item }}"
    loop:
-     - "{{ inventory_hostname }}"
-     - '%'
+    - "{{ inventory_hostname }}"
+    - '%'
 
  - name: Copy database dump file
    copy:
-     src: "{{ db['backupfile'] }}"
-     dest: /tmp
+    src: "{{ db['backupfile'] }}"
+    dest: /tmp
   
  - name: Restore database
    mysql_db:
-     name: "{{ db['database'] }}"
-     state: import
-     target: "/tmp/{{ db['backupfile'] }}"
-     login_password: "{{ db['password'] }}"
+    name: "{{ db['database'] }}"
+    state: import
+    target: "/tmp/{{ db['backupfile'] }}"
+    login_password: "{{ db['password'] }}"
